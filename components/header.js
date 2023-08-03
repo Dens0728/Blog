@@ -1,4 +1,3 @@
-const Header = () => (
-<Header>HEADER</Header>;
-)
+const Header = () =>
+ <header>HEADER</header>;
 export default Header;

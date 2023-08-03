@@ -1,16 +1,12 @@
-import Header from "components/header";
-import Footer from "components/footer";
-import hero from "components/hero";
+import Hero from "components/hero"
 
 const Home = () => {
-  return (
-    <>
-      <header />
-      <main>
-        <Hero />
-      </main>
-      <footer />
-    </>
-  );
-};
-export default Home;
+  return (<Hero
+  title ="CUBE"
+  subtitle= "アウトプットしていくサイト"
+  imageOn
+  />
+  )
+}
+
+export default Home

@@ -1,12 +1,6 @@
-import Hero from "components/hero"
+import Hero from 'components/hero'
 
-const Blog = () => {
-  return (
-  <Hero
-  title= "Blog"
-  subtitle="Recent Posts"
-  />
-  )
+const blog = () => {
+  return <Hero title='Blog' subtitle='Recent Posts' />
 }
-
-export default Blog
+export default blog

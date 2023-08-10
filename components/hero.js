@@ -1,3 +1,4 @@
+// import styles from 'styles/hero.modules.css'
 const Hero = ({ title, subtitle, imageOn = false }) => {
   return (
     <div>

@@ -22,8 +22,9 @@
   align-items: center;
   text-align: center;
 }
+
 @media (min-width: 768px) {
 .sideBySideCenter{
-  text-align: :left;
+  text-align: left;
 }
 }

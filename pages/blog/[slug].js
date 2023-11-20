@@ -12,7 +12,7 @@ import {
 } from 'components/two-column'
 import ConvertBody from 'components/convert-body'
 import PostCategories from 'components/post-categories'
-// import Pagination from 'components/pagination'
+import Pagination from 'components/pagination'
 import Image from 'next/image'
 import { getPlaiceholder } from 'plaiceholder'
 
@@ -34,7 +34,7 @@ export default function Post ({
       <Meta
         pageTitle={title}
         pageDesc={description}
-        pageImg={eyecatch.url}
+        pageImg={eyecatch && eyecatch.url}
         pageImgW={eyecatch.width}
         pageImgH={eyecatch.height}
       />
@@ -81,6 +81,13 @@ export default function Post ({
 
 export async function getStaticPaths () {
   const allSlugs = await getAllSlugs()
+
+  if (!allSlugs) {
+    return {
+      paths: [],
+      fallback: false
+    }
+  }
 
   return {
     paths: allSlugs.map(({ slug }) => `/blog/${slug}`),

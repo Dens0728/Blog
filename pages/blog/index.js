@@ -19,7 +19,7 @@ const blog = ({ posts }) => {
 }
 const getStaticProps = async () => {
   const posts = await getAllPosts()
-  for (const post of post) {
+  for (const post of posts) {
     if (!post.hasOwnProperty('eyecatch')) {
       post.eyecatch = eyecatchLocal
     }

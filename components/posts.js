@@ -1,15 +1,27 @@
 import styles from 'styles/posts.module.css'
 import Link from 'next/link'
+import Image from 'next/image'
 
 const Posts = ({ posts }) => {
   return (
     <div className={styles.gridContainer}>
-      {posts.map(({ title, slug }) => (
+      {posts.map(({ title, slug, eyecatch }) => (
         <article className={styles.post} key={slug}>
           <Link href={`/blog/${slug}`}>
-            <a>
-              <h2>{title}</h2>
-            </a>
+            <figure>
+              <Image
+                src={eyecatch.url}
+                alt=''
+                layout='fill'
+                // width={eyecatch.width}
+                // height={eyecatch.height}
+                objectFit='cover'
+                sizes='(min-width: 1152px) 567px, 50vw'
+                placeholder='blur'
+                blurDataURL={eyecatch.blurDataURL}
+              />
+            </figure>
+            <h2>{title}</h2>
           </Link>
         </article>
       ))}
